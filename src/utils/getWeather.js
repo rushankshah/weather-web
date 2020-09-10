@@ -1,6 +1,7 @@
 const request = require('request')
+const appid = require('./appId.js')
 const getWeather = async (cityName, callback) => {
-    const url = 'http://api.openweathermap.org/data/2.5/weather?q='+encodeURIComponent(cityName)+'&units=metric&appid=6ea01af7d3f02f2109fffbd79230e68b'
+    const url = 'http://api.openweathermap.org/data/2.5/weather?q='+encodeURIComponent(cityName)+'&units=metric&appid='+appid
     request({url: url, json: true},(error, response)=>{
         if (error !== null){
             callback('Unable to connect to weather service!', undefined)

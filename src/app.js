@@ -5,6 +5,8 @@ const getWeather = require('./utils/getWeather.js')
 
 const app = express()
 
+const port = process.env.PORT || 3000
+
 // defin paths for express config
 const publicDirectoryPath = path.join(__dirname,'../public')
 const viewDirectoryPath = path.join(__dirname,'../templates/views')
@@ -79,6 +81,6 @@ app.get('*',(req, res)=>{
     )
 })
 
-app.listen(3000, ()=>{
-    console.log("Server is up and running")
+app.listen(port, ()=>{
+    console.log("Server is up and running at port "+port)
 })
