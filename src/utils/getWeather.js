@@ -10,7 +10,7 @@ const getWeather = async (cityName, callback) => {
         }else{
             const data = response.body
             callback(undefined, {
-                forecast: data.weather[0].description+'. Currently it is '+(data.main.temp).toPrecision(4)+' degree celcius out there.'
+                forecast: data.weather[0].main+'. '+data.weather[0].description+'. Currently it is '+(data.main.temp).toPrecision(4)+' degree celcius out there.'
             })
         }
     })
